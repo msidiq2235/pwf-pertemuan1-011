@@ -31,7 +31,7 @@ SS Database
 *Keterangan: Admin memiliki akses penuh ke menu Products, Muncul tombol Tambah, Edit, dan Hapus karena login sebagai admin pembuat data.*
 
 ### 3. Tampilan Produk (Sebagai User Biasa)
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f9a0416-c33a-4bee-b0d4-db0e95849009" />
 *Keterangan: User biasa hanya bisa melihat daftar produk. Tombol aksi disembunyikan menggunakan @can di Blade.*
 
 ### 4. Form Tambah Produk 
