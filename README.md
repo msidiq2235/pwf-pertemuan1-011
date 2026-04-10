@@ -23,3 +23,17 @@ SS Migrations/create_kategoris_table
 
 SS Database
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d29f2fd5-f95f-4aee-8c95-9e5a49f9f403" />
+
+## SS Tugas Pertemuan 5 : Otorisasi
+
+### 1. Tampilan Dashboard Admin
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1613ccb0-0da2-45a9-bf9e-0d50e798b2a8" />
+*Keterangan: Admin memiliki akses penuh ke menu Products, Muncul tombol Tambah, Edit, dan Hapus karena login sebagai admin pembuat data.*
+
+### 3. Tampilan Produk (Sebagai User Biasa)
+
+*Keterangan: User biasa hanya bisa melihat daftar produk. Tombol aksi disembunyikan menggunakan @can di Blade.*
+
+### 4. Form Tambah Produk 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/998bbdac-2659-451a-b251-d36c3c4ab415" />
+*Keterangan: Input data produk mencakup Nama, Harga, dan Stok.*
