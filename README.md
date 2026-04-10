@@ -37,3 +37,9 @@ SS Database
 ### 4. Form Tambah Produk 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/998bbdac-2659-451a-b251-d36c3c4ab415" />
 *Keterangan: Input data produk mencakup Nama, Harga, dan Stok.*
+
+### 5. Tampilan Database
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/65f8b479-26c6-47e9-844c-78a2847a095f" />
+*Keterangan: Tabel User, ada sebagai admin dan user*
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be86777c-757b-4426-9fa3-17cdb22a1aa3" />
+*Keterangan: Tabel Products*
