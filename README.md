@@ -31,9 +31,15 @@ SS Database
 *Keterangan: Admin memiliki akses penuh ke menu Products, Muncul tombol Tambah, Edit, dan Hapus karena login sebagai admin pembuat data.*
 
 ### 3. Tampilan Produk (Sebagai User Biasa)
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f9a0416-c33a-4bee-b0d4-db0e95849009" />
 *Keterangan: User biasa hanya bisa melihat daftar produk. Tombol aksi disembunyikan menggunakan @can di Blade.*
 
 ### 4. Form Tambah Produk 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/998bbdac-2659-451a-b251-d36c3c4ab415" />
 *Keterangan: Input data produk mencakup Nama, Harga, dan Stok.*
+
+### 5. Tampilan Database
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/65f8b479-26c6-47e9-844c-78a2847a095f" />
+*Keterangan: Tabel User, ada sebagai admin dan user*
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be86777c-757b-4426-9fa3-17cdb22a1aa3" />
+*Keterangan: Tabel Products*
