@@ -46,9 +46,9 @@ SS Database
 
 ## SS Tugas Pertemuan 6 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/687a2661-7b9a-40be-875c-5489262f9079" />
-*Keterangan: SS StoreProductRequest*
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdea9a5e-41ab-48ae-983b-5708716831e4" />
 *Keterangan: SS UpdateProductRequest*
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdea9a5e-41ab-48ae-983b-5708716831e4" />
+*Keterangan: SS StoreProductRequest*
 <img width="1920" height="1080" alt="Screenshot 2026-04-11 090735" src="https://github.com/user-attachments/assets/4714f6ce-0408-4aa9-8ac6-3db7ae7904a3" />
 <img width="1920" height="1080" alt="Screenshot 2026-04-11 090753" src="https://github.com/user-attachments/assets/9d1ee641-d3e6-4578-beb2-158fdd6c43fc" />
 *Keterangan: SS Validasi Store*
