@@ -15,17 +15,26 @@
                         
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Nama Produk</label>
-                            <input type="text" name="name" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contoh: Laptop ASUS" required>
+                            <input type="text" name="name" value="{{ old('name') }}" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contoh: Laptop ASUS">
+                            @error('name')
+                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Harga</label>
-                            <input type="number" name="price" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="0" required>
+                            <input type="number" name="price" value="{{ old('price') }}" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="0">
+                            @error('price')
+                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2">Jumlah Stok (Qty)</label>
-                            <input type="number" name="qty" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="0" required>
+                            <input type="number" name="qty" value="{{ old('qty') }}" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="0">
+                            @error('qty')
+                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="flex items-center space-x-4">
