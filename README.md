@@ -53,4 +53,16 @@ SS Database
 <img width="1920" height="1080" alt="Screenshot 2026-04-11 090753" src="https://github.com/user-attachments/assets/9d1ee641-d3e6-4578-beb2-158fdd6c43fc" />
 *Keterangan: SS Validasi Store*
 
+## SS Tugas Pertemuan 7
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1ab784a7-d355-4ac5-a4fc-9405ee76dbc5" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bad54d55-c46f-400b-b980-c7215b1e54b0" />
+*AddProduct
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4f813fce-1945-45b0-8000-c43ab9c305d2" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f489e9c6-c5e2-4c23-ae8b-ec1c44cf6d82" />
+*DeleteProduct
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a657d268-e02b-4dff-8bf0-b43f4607ecb0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6588465e-22de-45d6-bed9-783b4db83d01" />
+*EditProduct
 
