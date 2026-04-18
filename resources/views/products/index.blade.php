@@ -21,9 +21,9 @@
                     </div>
                     
                     @can('manage-product')
-                        <a href="{{ route('products.create') }}" class="mb-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
-                            + Tambah Produk
-                        </a>
+                        <div class="mb-4">
+                            <x-add-product :url="route('products.create')" :name="'Product'" />
+                        </div>
                     @endcan
 
                     <table class="min-w-full divide-y divide-gray-200 mt-4 border">
@@ -48,18 +48,14 @@
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{{ $product->user->name ?? 'Unknown' }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium flex space-x-3">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium flex items-center space-x-3">
                                         
                                         @can('update', $product)
-                                            <a href="{{ route('products.edit', $product->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            <x-edit-button :url="route('products.edit', $product->id)" />
                                         @endcan
 
                                         @can('delete', $product)
-                                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="text-red-600 hover:text-red-900">Hapus</button>
-                                            </form>
+                                            <x-delete-button :action="route('products.destroy', $product->id)" />
                                         @endcan
 
                                     </td>
