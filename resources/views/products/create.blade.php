@@ -1,47 +1,75 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tambah Produk') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+    <div class="py-12 bg-gray-900 min-h-screen">
+        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg border border-gray-700">
+                <div class="p-8 text-gray-100">
                     
-                    <form action="{{ route('products.store') }}" method="POST">
+                    <!-- Header Form -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                            <a href="{{ route('products.index') }}" class="text-gray-400 hover:text-white transition">
+                                <!-- Icon Back -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </a>
+                            Add Product
+                        </h2>
+                        <p class="text-gray-400 text-sm mt-1 ml-8">Fill in the details to add a new product.</p>
+                    </div>
+
+                    <form action="{{ route('products.store') }}" method="POST" class="ml-8">
                         @csrf
                         
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Nama Produk</label>
-                            <input type="text" name="name" value="{{ old('name') }}" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contoh: Laptop ASUS">
+                        <!-- Input: Nama Produk -->
+                        <div class="mb-5">
+                            <label class="block text-gray-300 text-sm font-semibold mb-2">Nama Produk</label>
+                            <input type="text" name="name" value="{{ old('name') }}" class="w-full bg-gray-900 border border-gray-700 text-white rounded-lg py-2.5 px-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 placeholder-gray-500" placeholder="e.g. Wireless Headphones">
                             @error('name')
                                 <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Harga</label>
-                            <input type="number" name="price" value="{{ old('price') }}" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="0">
-                            @error('price')
+                        <!-- Input: Kategori (Baru Ditambahkan) -->
+                        <div class="mb-5">
+                            <label class="block text-gray-300 text-sm font-semibold mb-2">Kategori</label>
+                            <select name="category_id" class="w-full bg-gray-900 border border-gray-700 text-gray-300 rounded-lg py-2.5 px-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                                <option value="" disabled {{ old('category_id') ? '' : 'selected' }}>-- Pilih Kategori --</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
                                 <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
                             @enderror
                         </div>
 
-                        <div class="mb-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Jumlah Stok (Qty)</label>
-                            <input type="number" name="qty" value="{{ old('qty') }}" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="0">
-                            @error('qty')
-                                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
-                            @enderror
+                        <!-- Input: Qty & Price (Dibuat Bersebelahan) -->
+                        <div class="flex gap-4 mb-8">
+                            <div class="w-1/2">
+                                <label class="block text-gray-300 text-sm font-semibold mb-2">Quantity</label>
+                                <input type="number" name="qty" value="{{ old('qty') }}" class="w-full bg-gray-900 border border-gray-700 text-white rounded-lg py-2.5 px-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" placeholder="0">
+                                @error('qty')
+                                    <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="w-1/2">
+                                <label class="block text-gray-300 text-sm font-semibold mb-2">Price (Rp)</label>
+                                <input type="number" name="price" value="{{ old('price') }}" class="w-full bg-gray-900 border border-gray-700 text-white rounded-lg py-2.5 px-4 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" placeholder="0">
+                                @error('price')
+                                    <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
                         </div>
 
-                        <div class="flex items-center space-x-4">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow-md transition duration-150">
-                                Simpan Produk
+                        <!-- Tombol Action -->
+                        <div class="flex items-center justify-end space-x-4 pt-4 border-t border-gray-700 mt-4">
+                            <a href="{{ route('products.index') }}" class="text-gray-400 hover:text-white text-sm font-medium transition">Cancel</a>
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-150">
+                                Save Product
                             </button>
-                            <a href="{{ route('products.index') }}" class="text-gray-600 hover:underline text-sm">Batal</a>
                         </div>
                     </form>
 

@@ -7,19 +7,22 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('user')->latest()->get(); 
+        // Tambahkan 'category' di dalam with()
+        $products = Product::with(['user', 'category'])->latest()->get(); 
         return view('products.index', compact('products'));
     }
 
     public function create()
     {
         Gate::authorize('manage-product');
-        return view('products.create');
+        $categories = Category::all(); 
+        return view('products.create', compact('categories'));
     }
 
     public function store(StoreProductRequest $request)
@@ -30,6 +33,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'qty' => $request->qty,
+            'category_id' => $request->category_id, // <-- INI YANG KURANG TADI
             'user_id' => Auth::id(), 
         ]);
 
@@ -46,8 +50,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         Gate::authorize('update', $product);
+        $categories = Category::all(); 
 
-        return view('products.edit', compact('product'));
+        return view('products.edit', compact('product', 'categories'));
     }
 
     public function update(UpdateProductRequest $request, string $id)
@@ -59,6 +64,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'qty' => $request->qty,
+            'category_id' => $request->category_id,
         ]);
 
         return redirect()->route('products.index')->with('success', 'Produk berhasil diupdate!');

@@ -9,15 +9,17 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'price', 'qty', 'user_id'];
+    protected $fillable = ['name', 'price', 'qty', 'user_id', 'category_id'];
 
+    // Relasi ke User (Pembuat produk)
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function categories()
+    // Relasi ke Category (Kategori produk)
+    public function category()
     {
-        return $this->hasMany(Kategoris::class);
+        return $this->belongsTo(Category::class);
     }
 }
