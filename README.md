@@ -1,5 +1,7 @@
+## SS Tugas Pertemuan 1
 <img width="1920" height="1080" alt="Screenshot 2026-02-21 093137" src="https://github.com/user-attachments/assets/3b5747d9-87f4-4c40-a0f8-9a96f2dcbb91" />
 
+## SS Tugas Pertemuan 2
 /about
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1faed624-a065-4f7a-bb02-344a3a217b38" />
 
@@ -9,6 +11,7 @@
 /login
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e3b3b870-5ccb-4e46-aad6-83ad9bca4b60" />
 
+## SS Tugas Pertemuan 3
 SS Models/Kategori.php
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/89f646f6-f412-4b93-afcd-5b05b6de94a7" />
 
@@ -23,6 +26,19 @@ SS Migrations/create_kategoris_table
 
 SS Database
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d29f2fd5-f95f-4aee-8c95-9e5a49f9f403" />
+
+
+## SS Tugas Pertemuan 4
+//ProductController
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bc958129-5c57-45a6-8188-dccdc0cf6f99" />
+
+//routes/web.php
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8fd57633-c775-46d5-8ca8-6d2dd7280eaa" />
+
+//resources/views/product
+<img width="354" height="118" alt="image" src="https://github.com/user-attachments/assets/40117f96-2bb2-4221-97c8-89fc4c125cb7" />
+
+
 
 ## SS Tugas Pertemuan 5 : Otorisasi
 
@@ -66,3 +82,16 @@ SS Database
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6588465e-22de-45d6-bed9-783b4db83d01" />
 *EditProduct
 
+## SS UCP 1
+// CRUD Tabel Category 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/db91cd51-d43f-40da-8c86-b096e38431d1" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9b36be63-2c14-4abe-8caa-fc9b6d5059e2" />
+
+//Add Product relasi dengan Category
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/80eeba8a-f89c-4d69-aea3-db15e6203b55" />
+
+//gates untuk memberikan rules akses untuk ke Category
+//admin
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/abe3b7f9-ccb0-438c-9d4f-5dc7d3f8fa3a" />
+//user
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/abd71f34-c058-471f-9e12-b20544f21739" />
