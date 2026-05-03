@@ -27,11 +27,12 @@ class CategoryController extends Controller
     // Method POST (Create)
     public function store(Request $request)
     {
-        try {
-            $validated = $request->validate([
-                'name' => 'required|string|max:255|unique:categories,name',
-            ]);
+        // Validasi ditaruh DI LUAR try-catch agar error 422 (Unprocessable Entity) berjalan otomatis
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name',
+        ]);
 
+        try {
             $category = Category::create($validated);
 
             Log::info('Menambah data kategori', ['category' => $category]);
@@ -67,16 +68,18 @@ class CategoryController extends Controller
     // Method PUT (Update)
     public function update(Request $request, string $id)
     {
+        // 1. Cek dulu apakah data ada sebelum memvalidasi inputannya
+        $category = Category::find($id);
+        if (!$category) {
+            return response()->json(['message' => 'Kategori tidak ditemukan'], 404);
+        }
+
+        // 2. Validasi DI LUAR try-catch
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $id,
+        ]);
+
         try {
-            $category = Category::find($id);
-            if (!$category) {
-                return response()->json(['message' => 'Kategori tidak ditemukan'], 404);
-            }
-
-            $validated = $request->validate([
-                'name' => 'required|string|max:255|unique:categories,name,' . $id,
-            ]);
-
             $category->update($validated);
 
             return response()->json([
